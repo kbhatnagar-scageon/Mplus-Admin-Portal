@@ -12,7 +12,7 @@ import { User } from '@/features/users/types'
 
 export default function CreateUserPage() {
   const router = useRouter()
-  const { createUser } = useUsers()
+  const { createUser } = useUsers() as any
 
   const handleCreateUser = (userData: Omit<User, 'id' | 'createdAt' | 'updatedAt'>) => {
     createUser(userData)
