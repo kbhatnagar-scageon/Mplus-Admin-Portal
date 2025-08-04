@@ -12,7 +12,7 @@ export default function CreateDeliveryPersonnelPage() {
   const { createPersonnel } = useDeliveryPersonnel();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (data: any) => {
+  const handleSubmit: any = async (data: any) => {
     setIsLoading(true);
     
     try {
