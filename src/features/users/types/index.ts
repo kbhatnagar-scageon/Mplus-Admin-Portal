@@ -1,4 +1,4 @@
-export type UserRole = "STORE_VENDOR" | "DELIVERY_PERSONNEL";
+export type UserRole = "SUPERADMIN" | "STORE_VENDOR" | "DELIVERY_PERSONNEL";
 export type UserStatus = "ACTIVE" | "INACTIVE";
 export type VehicleType = "BIKE" | "CYCLE" | "CAR";
 
