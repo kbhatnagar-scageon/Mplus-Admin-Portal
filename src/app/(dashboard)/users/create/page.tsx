@@ -36,7 +36,7 @@ export default function CreateUserPage() {
         </CardHeader>
         <CardContent>
           <UserForm 
-            onSubmit={handleCreateUser}
+            onSubmit={handleCreateUser as any}
             mode="create"
           />
         </CardContent>
