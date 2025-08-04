@@ -65,7 +65,7 @@ export function DeliveryAssignment({
       toast.success("Delivery personnel assigned successfully!");
       onAssignment?.(selectedPersonnel);
       
-    } catch (_) {
+    } catch {
       toast.error("Failed to assign delivery personnel. Please try again.");
     } finally {
       setIsAssigning(false);
@@ -84,7 +84,7 @@ export function DeliveryAssignment({
       toast.success("Delivery personnel assignment removed!");
       onAssignment?.("");
       
-    } catch (_) {
+    } catch {
       toast.error("Failed to remove assignment. Please try again.");
     } finally {
       setIsAssigning(false);

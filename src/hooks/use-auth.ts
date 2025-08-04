@@ -44,7 +44,7 @@ export const useAuth = () => {
             error: null,
           });
         }
-      } catch (_) {
+      } catch {
         setState({
           user: null,
           isAuthenticated: false,
@@ -138,7 +138,7 @@ export const useAuth = () => {
           newValue: null,
         })
       );
-    } catch (_) {
+    } catch {
       // Even if logout fails, clear local state
       setState({
         user: null,
@@ -163,7 +163,7 @@ export const useAuth = () => {
       } else {
         await logout();
       }
-    } catch (_) {
+    } catch {
       await logout();
     }
   }, [logout]);

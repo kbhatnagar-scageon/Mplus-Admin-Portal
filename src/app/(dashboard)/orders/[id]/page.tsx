@@ -64,7 +64,7 @@ export default function OrderDetailsPage() {
 
   const confirmApproval = async () => {
     if (approvalDialog.type === 'approve') {
-      await approveOrder(id as string, remarks);
+      await approveOrder(id as string);
     } else if (approvalDialog.type === 'reject') {
       await rejectOrder(id as string, remarks);
     }

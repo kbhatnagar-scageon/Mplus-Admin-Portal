@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { UserForm } from '@/features/users/components/user-form';
 import { useUsers } from '@/features/users/hooks/use-users';
-import { User } from '@/features/users/types';
+import { User } from '@/types/common';
 
 export default function EditUserPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);

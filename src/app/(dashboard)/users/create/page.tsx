@@ -8,15 +8,20 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { UserForm } from '@/features/users/components/user-form'
 import { useUsers } from '@/features/users/hooks/use-users'
-import { User } from '@/features/users/types'
+import { User } from '@/types/common'
 
 export default function CreateUserPage() {
   const router = useRouter()
   const { createUser } = useUsers()
 
-  const handleCreateUser = (userData: Omit<User, 'id' | 'createdAt' | 'updatedAt'>) => {
-    createUser(userData)
-    router.push('/users')
+  const handleCreateUser = async (userData: Omit<User, 'id' | 'createdAt' | 'updatedAt'>) => {
+    try {
+      await createUser(userData)
+      router.push('/users')
+    } catch (error) {
+      // Error handling is done in the hook itself via toast
+      console.error('Failed to create user:', error)
+    }
   }
 
   return (
