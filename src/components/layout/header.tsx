@@ -60,7 +60,7 @@ export function Header({ user, onMenuToggle }: HeaderProps) {
       await logout();
       toast.success("Logged out successfully");
       router.push("/login");
-    } catch (error) {
+    } catch (_) {
       toast.error("Error logging out");
     } finally {
       setShowLogoutDialog(false);

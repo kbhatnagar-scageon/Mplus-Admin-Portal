@@ -1,5 +1,3 @@
-import { INDIAN_STATES } from "@/lib/constants";
-
 export type VehicleType = "bicycle" | "motorcycle" | "van" | "car";
 
 export type DeliveryStatus = "available" | "busy" | "offline" | "on_break";

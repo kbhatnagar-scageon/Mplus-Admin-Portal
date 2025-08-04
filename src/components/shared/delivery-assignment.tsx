@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { mockUsers } from "@/lib/mock-data/users";
-import { User, Truck, Clock, MapPin, CheckCircle, AlertCircle } from "lucide-react";
+import { User, Truck, Clock, MapPin, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
 interface DeliveryPersonnel {
@@ -65,7 +65,7 @@ export function DeliveryAssignment({
       toast.success("Delivery personnel assigned successfully!");
       onAssignment?.(selectedPersonnel);
       
-    } catch (error) {
+    } catch (_) {
       toast.error("Failed to assign delivery personnel. Please try again.");
     } finally {
       setIsAssigning(false);
@@ -84,7 +84,7 @@ export function DeliveryAssignment({
       toast.success("Delivery personnel assignment removed!");
       onAssignment?.("");
       
-    } catch (error) {
+    } catch (_) {
       toast.error("Failed to remove assignment. Please try again.");
     } finally {
       setIsAssigning(false);

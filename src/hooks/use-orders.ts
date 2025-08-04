@@ -39,7 +39,7 @@ export function useOrders() {
   const updateOrderStatus = async (
     orderId: string, 
     newStatus: Order["status"], 
-    remarks?: string
+    _remarks?: string
   ): Promise<boolean> => {
     setIsLoading(true);
     
@@ -86,7 +86,7 @@ export function useOrders() {
       toast.success(statusMessages[newStatus] || "Order status updated");
       return true;
       
-    } catch (error) {
+    } catch (_) {
       toast.error("Failed to update order status");
       return false;
     } finally {
@@ -124,7 +124,7 @@ export function useOrders() {
       
       return true;
       
-    } catch (error) {
+    } catch (_) {
       toast.error("Failed to assign delivery personnel");
       return false;
     } finally {
@@ -132,7 +132,7 @@ export function useOrders() {
     }
   };
 
-  const approveOrder = async (orderId: string, remarks?: string): Promise<boolean> => {
+  const approveOrder = async (orderId: string, _remarks?: string): Promise<boolean> => {
     setIsLoading(true);
     
     try {
@@ -156,7 +156,7 @@ export function useOrders() {
       toast.success("Order approved successfully");
       return true;
       
-    } catch (error) {
+    } catch (_) {
       toast.error("Failed to approve order");
       return false;
     } finally {
@@ -164,7 +164,7 @@ export function useOrders() {
     }
   };
 
-  const rejectOrder = async (orderId: string, remarks: string): Promise<boolean> => {
+  const rejectOrder = async (orderId: string, _remarks: string): Promise<boolean> => {
     setIsLoading(true);
     
     try {
@@ -186,7 +186,7 @@ export function useOrders() {
       toast.success("Order rejected successfully");
       return true;
       
-    } catch (error) {
+    } catch (_) {
       toast.error("Failed to reject order");
       return false;
     } finally {

@@ -70,8 +70,8 @@ export const authService = {
       localStorage.removeItem("user");
       localStorage.removeItem("token");
       localStorage.removeItem("lastActivity");
-    } catch (error) {
-      console.warn("Error clearing localStorage:", error);
+    } catch (_) {
+      console.warn("Error clearing localStorage:", _);
     }
   },
 
@@ -89,8 +89,8 @@ export const authService = {
       }
 
       return user;
-    } catch (error) {
-      console.warn("Error parsing stored user:", error);
+    } catch (_) {
+      console.warn("Error parsing stored user:", _);
       this.logout();
       return null;
     }
@@ -114,7 +114,7 @@ export const authService = {
       const MAX_TOKEN_AGE = 24 * 60 * 60 * 1000;
 
       return tokenAge < MAX_TOKEN_AGE;
-    } catch (error) {
+    } catch (_) {
       return false;
     }
   },
@@ -135,8 +135,8 @@ export const authService = {
   updateLastActivity(): void {
     try {
       localStorage.setItem("lastActivity", Date.now().toString());
-    } catch (error) {
-      console.warn("Error updating last activity:", error);
+    } catch (_) {
+      console.warn("Error updating last activity:", _);
     }
   },
 
@@ -151,7 +151,7 @@ export const authService = {
       const MAX_TOKEN_AGE = 24 * 60 * 60 * 1000;
 
       return Math.max(0, MAX_TOKEN_AGE - tokenAge);
-    } catch (error) {
+    } catch (_) {
       return 0;
     }
   },

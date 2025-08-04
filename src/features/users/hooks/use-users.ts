@@ -7,6 +7,35 @@ export function useUsers() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
+  const createUser = useCallback(async (userData: Omit<User, 'id' | 'createdAt' | 'updatedAt'>) => {
+    setLoading(true)
+    setError(null)
+
+    try {
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 500))
+      
+      const newUser: User = {
+        ...userData,
+        id: Math.random().toString(36).substr(2, 9),
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      }
+      
+      setUsers(prev => [...prev, newUser])
+      
+      // Update the mock data array too for persistence
+      mockUsers.push(newUser)
+      
+      return newUser
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to create user')
+      throw err
+    } finally {
+      setLoading(false)
+    }
+  }, [])
+
   const updateUser = useCallback(async (id: string, userData: Partial<User>) => {
     setLoading(true)
     setError(null)
@@ -111,6 +140,7 @@ export function useUsers() {
     users,
     loading,
     error,
+    createUser,
     updateUser,
     deleteUser,
     bulkUpdateStatus,

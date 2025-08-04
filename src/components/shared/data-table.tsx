@@ -15,8 +15,6 @@ import {
   ChevronDown,
   Search,
   Download,
-  Filter,
-  SortAsc,
   Eye,
   RefreshCw,
   X,
@@ -42,7 +40,7 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { LoadingSpinner, TableRowSkeleton } from "./loading-spinner";
+import { TableRowSkeleton } from "./loading-spinner";
 import { EmptyState } from "./empty-state";
 import { cn } from "@/lib/utils";
 
@@ -277,8 +275,8 @@ export function DataTable<TData, TValue>({
           <TableBody>
             {isLoading ? (
               // Loading skeleton
-              Array.from({ length: 5 }).map((_, index) => (
-                <TableRow key={`loading-${index}`}>
+              Array.from({ length: 5 }).map((_, i) => (
+                <TableRow key={`loading-${i}`}>
                   <TableCell colSpan={columns.length} className="p-0">
                     <TableRowSkeleton columns={columns.length} />
                   </TableCell>

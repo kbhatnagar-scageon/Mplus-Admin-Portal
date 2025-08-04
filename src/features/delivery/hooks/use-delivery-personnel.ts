@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { DeliveryPersonnel, DeliveryFilters, DeliveryStatus, VehicleType } from "@/features/delivery/types";
+import { DeliveryPersonnel, DeliveryFilters, DeliveryStatus } from "@/features/delivery/types";
 import { 
   mockDeliveryPersonnel, 
   getDeliveryPersonnelById, 
