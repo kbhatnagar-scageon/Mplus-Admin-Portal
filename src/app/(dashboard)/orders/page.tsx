@@ -47,9 +47,7 @@ export default function OrdersPage() {
             filters={filters}
             onUpdateStatus={updateOrderStatus}
             onAssignDeliveryPersonnel={assignDeliveryPersonnel}
-            onCancelOrder={(orderId, reason) =>
-              rejectOrder(orderId, reason || "Order cancelled")
-            }
+            onCancelOrder={(orderId) => rejectOrder(orderId)}
             onApproveOrder={approveOrder}
           />
         </CardContent>

@@ -36,7 +36,7 @@ interface OrderTableProps {
   orders?: Order[];
   onUpdateStatus?: (orderId: string, status: Order["status"]) => void;
   onAssignDeliveryPersonnel?: (orderId: string, personnelId: string) => void;
-  onCancelOrder?: (orderId: string, reason?: string) => void;
+  onCancelOrder?: (orderId: string) => void;
   onApproveOrder?: (orderId: string) => void;
   filters?: {
     status?: Order['status'];

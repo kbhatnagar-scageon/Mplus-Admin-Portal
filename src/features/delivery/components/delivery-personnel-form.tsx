@@ -95,7 +95,7 @@ export function DeliveryPersonnelForm({
       vehicleNumber: personnel?.vehicleNumber || "",
       licenseNumber: personnel?.licenseNumber || "",
       status: personnel?.status || "available",
-      isActive: personnel?.isActive ?? true,
+      isActive: personnel?.isActive !== undefined ? personnel.isActive : true,
       coverageAreas: personnel?.coverageAreas || [],
       workingHours: {
         start: personnel?.workingHours.start || "09:00",

@@ -66,7 +66,7 @@ export default function OrderDetailsPage() {
     if (approvalDialog.type === 'approve') {
       await approveOrder(id as string);
     } else if (approvalDialog.type === 'reject') {
-      await rejectOrder(id as string, remarks);
+      await rejectOrder(id as string);
     }
     
     setApprovalDialog({ open: false, type: null });

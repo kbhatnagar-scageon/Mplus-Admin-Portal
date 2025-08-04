@@ -163,7 +163,7 @@ export function useOrders() {
     }
   };
 
-  const rejectOrder = async (orderId: string, remarks: string): Promise<boolean> => {
+  const rejectOrder = async (orderId: string): Promise<boolean> => {
     setIsLoading(true);
     
     try {
