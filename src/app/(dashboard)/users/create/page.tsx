@@ -12,7 +12,7 @@ import { User } from '@/features/users/types'
 
 export default function CreateUserPage() {
   const router = useRouter()
-  const { createUser } = useUsers() as any
+  const { createUser } = useUsers()
 
   const handleCreateUser = (userData: Omit<User, 'id' | 'createdAt' | 'updatedAt'>) => {
     createUser(userData)
@@ -36,7 +36,7 @@ export default function CreateUserPage() {
         </CardHeader>
         <CardContent>
           <UserForm 
-            onSubmit={handleCreateUser as any}
+            onSubmit={handleCreateUser}
             mode="create"
           />
         </CardContent>

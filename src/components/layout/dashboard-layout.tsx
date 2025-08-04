@@ -6,7 +6,7 @@ import { Header } from "./header";
 import { useAuth } from "@/hooks/use-auth";
 import { LoadingSpinner } from "@/components/shared/loading-spinner";
 import { useRouter } from "next/navigation";
-import { Toaster } from "sonner";
+
 import { cn } from "@/lib/utils";
 
 interface DashboardLayoutProps {

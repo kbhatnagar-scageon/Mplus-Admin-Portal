@@ -86,7 +86,7 @@ export function DeliveryPersonnelForm({
   );
 
   const form = useForm<PersonnelFormData>({
-    resolver: zodResolver(personnelSchema) as any,
+    resolver: zodResolver(personnelSchema),
     defaultValues: {
       name: personnel?.name || "",
       email: personnel?.email || "",

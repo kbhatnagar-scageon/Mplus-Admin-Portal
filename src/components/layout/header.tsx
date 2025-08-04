@@ -28,6 +28,7 @@ import {
   Clock,
   Shield,
   ChevronDown,
+  Menu,
 } from "lucide-react";
 import { AuthUser } from "@/types/auth";
 import { useAuth } from "@/hooks/use-auth";
@@ -96,8 +97,18 @@ export function Header({ user, onMenuToggle }: HeaderProps) {
   return (
     <>
       <header className="flex items-center justify-between bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border px-6 py-3">
-        {/* Left side - could add breadcrumbs here */}
+        {/* Left side - Mobile menu button and breadcrumbs */}
         <div className="flex items-center space-x-4">
+          {/* Mobile menu button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="lg:hidden"
+            onClick={onMenuToggle}
+          >
+            <Menu className="h-4 w-4" />
+          </Button>
+          
           <div className="text-sm text-muted-foreground">
             Welcome back,{" "}
             <span className="font-medium text-foreground">{user?.name}</span>

@@ -13,8 +13,7 @@ export default function DeliveryPage() {
     personnel,
     updatePersonnelStatus,
     togglePersonnelActive,
-    deletePersonnel,
-    getPersonnelStats
+    deletePersonnel
   } = useDeliveryPersonnel();
 
   const stats = {

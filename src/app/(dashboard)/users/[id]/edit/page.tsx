@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { UserForm } from '@/features/users/components/user-form';
 import { useUsers } from '@/features/users/hooks/use-users';
+import { User } from '@/features/users/types';
 
 export default function EditUserPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -21,7 +22,7 @@ export default function EditUserPage({ params }: { params: Promise<{ id: string 
     notFound();
   }
 
-  const handleSubmit = async (data: any) => {
+  const handleSubmit = async (data: Partial<User>) => {
     try {
       await updateUser(id, data);
       toast.success('User updated successfully', {

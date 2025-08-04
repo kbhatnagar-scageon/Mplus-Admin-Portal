@@ -16,16 +16,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { 
   Dialog, 
   DialogContent, 
@@ -46,7 +38,7 @@ export default function OrderDetailsPage() {
     type: 'approve' | 'reject' | null;
   }>({ open: false, type: null });
   const [remarks, setRemarks] = useState("");
-  const [statusDialog, setStatusDialog] = useState(false);
+
   
   const order = getOrder(id as string);
 
@@ -86,8 +78,7 @@ export default function OrderDetailsPage() {
   };
 
   const handleStatusUpdate = async (newStatus: string) => {
-    await updateOrderStatus(id as string, newStatus as any);
-    setStatusDialog(false);
+    await updateOrderStatus(id as string, newStatus as 'pending' | 'confirmed' | 'preparing' | 'ready' | 'out_for_delivery' | 'delivered' | 'cancelled');
   };
 
   const canApprove = order.needsApproval && !order.isApproved;

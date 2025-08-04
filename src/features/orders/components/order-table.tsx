@@ -30,6 +30,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useDeliveryPersonnel } from "@/features/delivery/hooks/use-delivery-personnel";
+import { DeliveryPersonnel } from "@/features/delivery/types";
 
 interface OrderTableProps {
   orders?: Order[];
@@ -56,8 +57,8 @@ function DeliveryPersonnelSelector({
   currentPersonnelId?: string;
   isDisabled: boolean;
   onAssign?: (orderId: string, personnelId: string) => void;
-  availablePersonnel: any[];
-  getPersonnelById: (id: string) => any;
+  availablePersonnel: DeliveryPersonnel[];
+  getPersonnelById: (id: string) => DeliveryPersonnel | undefined;
 }) {
   const [open, setOpen] = useState(false);
 

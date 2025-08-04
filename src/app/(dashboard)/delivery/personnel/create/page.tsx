@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { DeliveryPersonnelForm } from "@/features/delivery/components/delivery-personnel-form";
 import { useDeliveryPersonnel } from "@/features/delivery/hooks/use-delivery-personnel";
+import { DeliveryPersonnel } from "@/features/delivery/types";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -12,7 +13,7 @@ export default function CreateDeliveryPersonnelPage() {
   const { createPersonnel } = useDeliveryPersonnel();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit: any = async (data: any) => {
+  const handleSubmit = async (data: Omit<DeliveryPersonnel, 'id' | 'ratings' | 'deliveryStats' | 'joinedAt' | 'createdAt'>) => {
     setIsLoading(true);
     
     try {
