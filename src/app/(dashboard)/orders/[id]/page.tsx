@@ -242,7 +242,7 @@ export default function OrderDetailsPage() {
                     <span className="text-sm text-muted-foreground">Delivery Address:</span>
                     <p className="font-medium">
                       {order.deliveryAddress.street}<br />
-                      {order.deliveryAddress.city}, {order.deliveryAddress.state} - {order.deliveryAddress.pincode}
+                      {order.deliveryAddress.city}, {String(order.deliveryAddress.state)} - {order.deliveryAddress.pincode}
                       {order.deliveryAddress.landmark && (
                         <><br /><span className="text-sm text-muted-foreground">Near: {order.deliveryAddress.landmark}</span></>
                       )}
